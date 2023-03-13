@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getMultipleQuoteUrl } from '../Contants/Constants';
 import Navigation from './Navigation';
 
 function Quote({ author, content, tags }) {
@@ -72,7 +73,7 @@ function ThirtyQuotes() {
   const fetchQuote = async () => {
     try {
       const response = await fetch(
-        'http://localhost:5006/Quote/getmultipleQuotebyusername'
+        getMultipleQuoteUrl
       );
       const data = await response.json();
       console.log({data})

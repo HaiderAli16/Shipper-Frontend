@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { GetSelectedShippersUrl, GetShippersUrl } from '../Contants/Constants';
 import Navigation from './Navigation';
 
 function GetShippers() {
@@ -7,7 +8,7 @@ function GetShippers() {
   const [shipperData, setShipperData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5006/shipment/GetAllShippers')
+    fetch(GetShippersUrl)
     //fetch('https://run.mocky.io/v3/13fbb8c9-f9ec-4ed0-a78d-71b1e5cf0ff3')
       .then((response) => response.json())
       .then((data) => {
@@ -23,7 +24,7 @@ function GetShippers() {
       // fetch(
       //   `http://localhost:5006/shipment/GetShippersDetails/${selectedShipper}`
       // )
-      fetch(`http://localhost:5006/shipment/GetShippersDetails/${selectedShipper}`)
+      fetch(`${GetSelectedShippersUrl}${selectedShipper}`)
         .then((response) => response.json())
         .then((data) => {
           console.log({ data });

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GetSingleQuoteUrl } from '../Contants/Constants';
 import Navigation from './Navigation';
 
 function RandomQuote() {
@@ -7,7 +8,7 @@ function RandomQuote() {
   const fetchQuote = async () => {
     try {
       const response = await fetch(
-        'http://localhost:5006/Quote/getsinglequote'
+          GetSingleQuoteUrl
       );
       const data = await response.json();
       setQuote(data);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { LoginUrl } from '../Contants/Constants';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ const Login = () => {
   };
 
   const handleLoginClick = async () => {
-    const response = await fetch('http://localhost:5006/auth/login', {
+    const response = await fetch(LoginUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

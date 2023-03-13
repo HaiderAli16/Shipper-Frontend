@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { RegisterUrl } from '../Contants/Constants';
 
 
 function Register() {
@@ -22,7 +23,7 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:5006/auth/register', {
+      const response = await fetch(RegisterUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
